@@ -1,15 +1,19 @@
 import { type FC, memo } from 'react'
+import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
 import AppHeader from '@/framework/app-header'
-import { Outlet } from 'react-router-dom'
+import AppSider from '@/framework/app-sider'
 
 const AppLayout: FC = () => {
     return (
-        <Layout>
+        <Layout className="h-screen">
             <AppHeader />
-            <Layout.Content>
-                <Outlet />
-            </Layout.Content>
+            <Layout hasSider>
+                <AppSider />
+                <Layout.Content>
+                    <Outlet />
+                </Layout.Content>
+            </Layout>
         </Layout>
     )
 }
