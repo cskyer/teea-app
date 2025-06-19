@@ -1,7 +1,8 @@
-import { Outlet, redirect } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { appLoader } from '@/routers/loaders'
-import type { IRoute } from '@/interface'
 import AppLoading from '@/framework/app-loading'
+import others from '@/routers/routes/others'
+import type { IRoute } from '@/interface'
 
 export const appRouter: IRoute[] = [
 
@@ -23,10 +24,7 @@ const rootRouter: IRoute[] = [
 
                 ]
             },
-            {
-                path: 'logout',
-                loader: () => redirect('/login')
-            }
+            ...others
         ]
     }
 ]
